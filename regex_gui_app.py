@@ -75,10 +75,6 @@ with col1:
     st.markdown('<div class="header-text">### ✍️ Paste Transcript Here:</div>', unsafe_allow_html=True)
     transcript = st.text_area("Paste transcript here...", height=400, label_visibility="collapsed")
 
-    # Add a Clear button to reset the text area
-    if st.button("Clear Transcript"):
-        transcript = ""  # Clear the content of the text area
-
 with col2:
     st.markdown('<div class="header-text">### 📄 Matched Output:</div>', unsafe_allow_html=True)
     output_container = st.empty()
@@ -107,7 +103,17 @@ def extract_matches(text, pattern):
     return results
 
 # Upload Button
-if st.button("UPLOAD", type="primary"):
+upload_button = st.button("UPLOAD", type="primary")
+
+# Clear Button
+clear_button = st.button("CLEAR Transcript")
+
+# Clear action
+if clear_button:
+    transcript = ""  # Clear the transcript field
+    output_container.empty()  # Clear the output container
+
+if upload_button:
     if transcript.strip():
         result_lines = extract_matches(transcript, regex_pattern)
         if result_lines:
