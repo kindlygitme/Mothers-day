@@ -19,6 +19,13 @@ st.markdown("""
         margin-top: 20px;
         font-weight: bold;
     }
+    .header-text {
+        font-size: 30px;
+        text-align: center;
+        color: white;
+        margin-top: 30px;
+        font-weight: bold;
+    }
     .upload-button button {
         background-color: red !important;
         color: white !important;
@@ -42,15 +49,24 @@ st.markdown("""
         color: white;
         font-weight: bold;
     }
-    .header-text {
+    .quote-text {
         color: white;
-        font-weight: bold;
+        font-size: 24px;
+        text-align: center;
+        font-style: italic;
+        margin-top: 20px;
     }
     </style>
 """, unsafe_allow_html=True)
 
 # Title
 st.markdown('<div class="big-title">HELLO RAVI</div>', unsafe_allow_html=True)
+
+# Mother's Day Special Heading
+st.markdown('<div class="header-text">🌸 Mother\'s Day Special 🌸</div>', unsafe_allow_html=True)
+
+# Mother's Day Quote
+st.markdown('<div class="quote-text">"A mother is she who can take the place of all others, but whose place no one else can take." - Cardinal Mermillod</div>', unsafe_allow_html=True)
 
 # Layout: 2 columns
 col1, col2 = st.columns(2)
