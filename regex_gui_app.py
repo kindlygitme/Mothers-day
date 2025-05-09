@@ -19,12 +19,6 @@ st.markdown("""
         margin-top: 20px;
         font-weight: bold;
     }
-    .center-logo {
-        display: flex;
-        justify-content: center;
-        margin-top: -10px;
-        margin-bottom: 20px;
-    }
     .upload-button button {
         background-color: red !important;
         color: white !important;
@@ -57,15 +51,6 @@ st.markdown("""
 
 # Title
 st.markdown('<div class="big-title">HELLO RAVI</div>', unsafe_allow_html=True)
-
-# Logo
-try:
-    logo = Image.open("C:/ffmpeg/aksh.png")
-    st.markdown('<div class="center-logo">', unsafe_allow_html=True)
-    st.image(logo, width=150)
-    st.markdown('</div>', unsafe_allow_html=True)
-except:
-    st.warning("⚠️ Logo not found at C:/ffmpeg/aksh.png")
 
 # Layout: 2 columns
 col1, col2 = st.columns(2)
